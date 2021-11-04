@@ -6,22 +6,29 @@
             v-model="data.search"
             @keypress="getMovieData">
     </div>
+    <Movie v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
 </template>
 
 <script lang='ts'>
+//Services
 import { defineComponent,reactive,onMounted } from 'vue';
 import movieServices from '@/services/MovieService';
 import MovieSearchDTO from '@/dtos/MovieSearchDTO';
 
+//Components
+import Movie from "@/components/Movie.vue";
+
 interface NewMovieState{
     search:string,
     loading:boolean,
-    movies:MovieSearchDTO | null 
+    movies:MovieSearchDTO 
 }
 
 
 const mainPage = defineComponent({
-    
+    components:{
+        Movie
+    },
     setup(){
         const data = reactive<NewMovieState>({
             search:'Superman',
