@@ -7,6 +7,17 @@
             @keypress="getMovieData">
     </div>
     <Movie v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
+    <div>
+        <div v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID">
+            <div class="bg-grey-100">
+                <h2>{{ movies.Title }}</h2>
+            </div>
+            <div>
+                <img width="200" :src="movies.Poster" />
+                <p>{{ movies.Year }}</p>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script lang='ts'>

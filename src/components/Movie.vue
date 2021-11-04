@@ -4,7 +4,7 @@
     </div>
     <div>
         <img width="200" :src="movies.Poster" />
-        <p>{{ movie.Year }}</p>
+        <p>{{ movies.Year }}</p>
     </div>
 </template>
 
