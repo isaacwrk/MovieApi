@@ -4,7 +4,7 @@ import MovieQuery from '@/queryObjects/MovieQuery';
 
 const movieService = {
     getMovie: async (search: MovieQuery): Promise<MovieSearchDTO> =>{
-        const resp = await http.get<MovieSearchDTO>('/movie', { params:search });
+        const resp = await http.get<MovieSearchDTO>('/', { params:search });
         return resp.data;
     }
 };
