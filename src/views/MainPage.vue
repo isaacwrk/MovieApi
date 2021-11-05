@@ -4,16 +4,16 @@
             <i class="fas fa-search"></i>
         </span>
         <input 
-            class="px-3 py-3 placeholder-black-olive text-black-olive relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring focus:ring-mount-pink w-full pl-10 mr-1 ml-1"
+            class="px-3 py-3 placeholder-black-olive text-black-olive relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring focus:ring-mount-pink w-full pl-10 mr-1 ml-2"
             type="text"
             placeholder="Pesquise por filmes e séries.."
             v-model="data.search"
             @keypress="getMovieData">
     </div>
     <div v-if="data.search == '' || data.search == null">
-        <p class="text-center text-ghost-white mt-3"> Sua pesquisa será renderizada aqui :) </p>
+        <p class="text-center text-ghost-white mt-3"> Sua pesquisa será renderizada aqui :)<br>Pesquise por titulos em Inglês, pois a API não trás traduzido. </p>
     </div>
-    <div class="flex flex-wrap w-full border border-mount-pink justify-center ml-1 mr-1">
+    <div class="flex flex-wrap grid grid-cols-6 w-full border border-mount-pink justify-center ml-2 mr-2">
         <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
     </div>
     
@@ -42,7 +42,7 @@ const mainPage = defineComponent({
     },
     setup(){
         const data = reactive<NewMovieState>({
-            search:'batman',
+            search:'',
             loading: true,
             movies:{
                 Search:[]
