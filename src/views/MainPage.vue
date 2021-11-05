@@ -7,7 +7,7 @@
             @keypress="getMovieData">
     </div>
     <Movie v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
-    <div>
+    <!-- <div>
         <div v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID">
             <div class="bg-grey-100">
                 <h2>{{ movies.Title }}</h2>
@@ -17,7 +17,7 @@
                 <p>{{ movies.Year }}</p>
             </div>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <script lang='ts'>

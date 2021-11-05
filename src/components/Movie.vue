@@ -1,10 +1,10 @@
 <template>
-    <div class="bg-grey-100">
-        <h2>{{ movies.Title }}</h2>
+    <div class="movie">
+        <h2>{{ movie.Title }}</h2>
     </div>
     <div>
-        <img width="200" :src="movies.Poster" />
-        <p>{{ movies.Year }}</p>
+        <img width="200" :src="movie.Poster" />
+        <p>{{ movie.Year }}</p>
     </div>
 </template>
 
@@ -12,7 +12,12 @@
 import { defineComponent } from 'vue';
 
 const movie = defineComponent({
-    
+    props:{
+        movie:{
+            type:Object,
+            required:true
+        }
+    }
 });
 
 export default movie;
