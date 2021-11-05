@@ -4,16 +4,16 @@
             <i class="fas fa-search"></i>
         </span>
         <input 
-            class="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring w-full pl-10 mr-1 ml-1"
+            class="px-3 py-3 placeholder-black-olive text-black-olive relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring focus:ring-mount-pink w-full pl-10 mr-1 ml-1"
             type="text"
             placeholder="Pesquise por filmes e séries.."
             v-model="data.search"
             @keypress="getMovieData">
     </div>
     <div v-if="data.search == '' || data.search == null">
-        <p class="text-center text-gray-400 mt-3"> Pesquise agora! seus resultados serão renderizados aqui :) </p>
+        <p class="text-center text-ghost-white mt-3"> Sua pesquisa será renderizada aqui :) </p>
     </div>
-    <div class="flex flex-wrap w-full border border-gray-500 justify-center ml-1 mr-1">
+    <div class="flex flex-wrap w-full border border-mount-pink justify-center ml-1 mr-1">
         <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
     </div>
     
