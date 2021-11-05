@@ -1,9 +1,7 @@
 <template>
-    <div class="movie">
+    <div class="text-center">
         <h2>{{ movie.Title }}</h2>
-    </div>
-    <div>
-        <img width="200" :src="movie.Poster" />
+        <img width="200" class="mx-auto" :src="movie.Poster"/>
         <p>{{ movie.Year }}</p>
     </div>
 </template>
