@@ -1,8 +1,8 @@
 <template>
-    <div class="text-center">
+    <div class="text-center bg-red-200 rounded mr-1 ml-1">
         <h2>{{ movie.Title }}</h2>
         <img width="200" class="mx-auto" :src="movie.Poster"/>
-        <p>{{ movie.Year }}</p>
+        <p>Year:{{ movie.Year }} / {{movie.Type}}</p>
     </div>
 </template>
 

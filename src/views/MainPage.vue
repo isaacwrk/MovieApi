@@ -10,6 +10,9 @@
             v-model="data.search"
             @keypress="getMovieData">
     </div>
+    <div v-if="data.search == '' || data.search == null">
+        <p class="text-center text-gray-400 mt-3"> Pesquise agora! seus resultados serão renderizados aqui :) </p>
+    </div>
     <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
 </template>
 
@@ -47,6 +50,7 @@ const mainPage = defineComponent({
             try{
                 const resp = await movieServices.getMovie({ s:data.search });
                 data.movies = resp;
+                data.loading = false;
             } catch(error){
                 console.log(error);
             }
