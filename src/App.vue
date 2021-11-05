@@ -1,6 +1,9 @@
 <template>
     <Header/>
-    <MainPage/>
+    <div class="mt-3">
+        <MainPage/>
+    </div>
+    
 </template>
 
 <script lang="ts">
