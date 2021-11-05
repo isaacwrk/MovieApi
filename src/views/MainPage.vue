@@ -10,10 +10,10 @@
             v-model="data.search"
             @keypress="getMovieData">
     </div>
-    <div v-if="data.search == '' || data.search == null">
+    <div v-if="data.movies.Search == null">
         <p class="text-center text-ghost-white mt-3"> Sua pesquisa será renderizada aqui :)<br>Pesquise por titulos em Inglês, pois a API não trás traduzido. </p>
     </div>
-    <div class="flex flex-wrap grid grid-cols-6 w-full border border-mount-pink justify-center ml-2 mr-2">
+    <div class="flex flex-wrap grid grid-cols-6 border border-mount-pink justify-center ml-2 mr-2 pb-1">
         <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
     </div>
     
