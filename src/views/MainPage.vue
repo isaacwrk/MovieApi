@@ -13,7 +13,7 @@
     <div v-if="data.search == '' || data.search == null">
         <p class="text-center text-gray-400 mt-3"> Pesquise agora! seus resultados serão renderizados aqui :) </p>
     </div>
-    <div class="flex flex-wrap w-full border border-red-500 justify-center">
+    <div class="flex flex-wrap w-full border border-gray-500 justify-center ml-1 mr-1">
         <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
     </div>
     

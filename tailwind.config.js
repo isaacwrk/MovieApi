@@ -6,6 +6,13 @@ module.exports = {
             fontFamily: {
                 sans: ['Oswald']
             },
+            colors:{
+                "erie-black":"#222222",
+                "dark-purple":"#291528",
+                "black-olive":"#3A3E3B",
+                "ghost-white":"#F0EFF4",
+                "mount-pink":"#9E829C"
+            }
         },
     },
     variants: {
