@@ -1,5 +1,5 @@
 <template>
-    <footer class="text-gray-600 body-font bg-dark-purple mt-1 w-full text-center">
+    <footer class="min-h-full text-gray-600 body-font bg-dark-purple mt-1 w-full text-center">
         <p class="text-ghost-white hover:text-mount-pink text-sm text-center">
             isaacwrk
         </p>

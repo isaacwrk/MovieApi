@@ -28,6 +28,7 @@ import MovieSearchDTO from '@/dtos/MovieSearchDTO';
 
 //Components
 import Movie from "@/components/Movie.vue";
+import Footer from '@/components/Footer.vue';
 
 interface NewMovieState{
     search:string,

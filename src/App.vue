@@ -4,7 +4,6 @@
         <MainPage/>
     </div>
     <Footer/>
-    
 </template>
 
 <script lang="ts">
