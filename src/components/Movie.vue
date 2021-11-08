@@ -1,7 +1,7 @@
 <template>
     <div class="text-center bg-dark-purple hover:text-mount-pink text-ghost-white rounded mr-1 ml-1 w-86">
         <h2>{{ movie.Title }}</h2>
-        <img width="200"  class="mx-auto" :src="movie.Poster"/>
+        <img width="200"  class="mx-auto h-56" :src="movie.Poster"/>
         <p>Year:{{ movie.Year }} / {{movie.Type}}</p>
     </div>
 
