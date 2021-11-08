@@ -7,24 +7,26 @@
         <h2 class="text-center text-white text-xl font-semibold">Carregando...</h2>
         <p class="w-1/3 text-center text-white">Quase lá, estamos nos últimos ajustes :)</p>
     </div>
-    <div v-else class="relative flex w-full flex-wrap items-stretch mb-3">
-        <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 rounded text-base items-center justify-center w-8 pl-3 py-3">
-            <i class="fas fa-search"></i>
-        </span>
-        <input 
-            class="px-3 py-3 placeholder-black-olive text-black-olive relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring focus:ring-mount-pink w-full pl-10 mr-1 ml-2"
-            type="text"
-            placeholder="Pesquise por filmes e séries.."
-            v-model="data.search"
-            @keypress="getMovieData">
+    <div v-else class="flex-grow  min-h-screen">
+        <div class="relative flex w-full flex-wrap items-stretch mb-3">
+            <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 rounded text-base items-center justify-center w-8 pl-3 py-3">
+                <i class="fas fa-search"></i>
+            </span>
+            <input 
+                class="px-3 py-3 placeholder-black-olive text-black-olive relative bg-white rounded text-sm border border-gray-400 outline-none focus:outline-none focus:ring focus:ring-mount-pink w-full pl-10 mr-1 ml-2"
+                type="text"
+                placeholder="Pesquise por filmes e séries.."
+                v-model="data.search"
+                @keypress="getMovieData">
+        </div>
+        <div v-if="data.movies.Search == null">
+            <p class="text-center text-ghost-white mt-3"> Sua pesquisa será renderizada aqui :)<br>Pesquise por titulos em Inglês, pois a base de dados da API não trás em portugês. </p>
+        </div>
+        <div class="flex flex-wrap grid grid-cols-6 border border-mount-pink justify-center ml-2 mr-2 pb-1 min-h-full">
+            <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
+        </div>
     </div>
-    <div v-if="data.movies.Search == null">
-        <p class="text-center text-ghost-white mt-3"> Sua pesquisa será renderizada aqui :)<br>Pesquise por titulos em Inglês, pois a base de dados da API não trás em portugês. </p>
-    </div>
-    <div class="flex flex-wrap grid grid-cols-6 border border-mount-pink justify-center ml-2 mr-2 pb-1">
-        <Movie class="mt-3" v-for="movies in data.movies.Search" :movie='movies' :key="movies.imdbID"/>
-    </div>
-    
+   
     
 </template>
 

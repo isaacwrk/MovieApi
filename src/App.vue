@@ -1,12 +1,10 @@
 <template>
-    <div class="bg-black-olive">
-        <Header/>
-        <div class="mt-3">
-            <MainPage/>
-        </div>
-        <Footer/>
+    <Header/>
+    <div class="mt-3">
+        <MainPage/>
     </div>
-   
+    <Footer/>
+    
 </template>
 
 <script lang="ts">
