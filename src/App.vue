@@ -1,9 +1,12 @@
 <template>
-    <Header/>
-    <div class="mt-3">
-        <MainPage/>
+    <div class="bg-black-olive">
+        <Header/>
+        <div class="mt-3">
+            <MainPage/>
+        </div>
+        <Footer/>
     </div>
-    <Footer/>
+   
 </template>
 
 <script lang="ts">
