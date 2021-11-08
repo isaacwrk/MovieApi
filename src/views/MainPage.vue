@@ -1,5 +1,13 @@
 <template>
-    <div class="relative flex w-full flex-wrap items-stretch mb-3">
+    <div v-if="data.loading" wire:loading class="fixed top-0 left-0 right-0 bottom-0 w-full min-h-screen h-screen z-50 overflow-hidden bg-gray-700 opacity-75 flex flex-col items-center justify-center">
+        <div>
+            <div style="border-top-color:transparent"
+                 class="w-16 h-16 border-4 border-blue-400 border-double rounded-full animate-spin"></div>
+        </div>
+        <h2 class="text-center text-white text-xl font-semibold">Carregando...</h2>
+        <p class="w-1/3 text-center text-white">Quase lá, estamos nos últimos ajustes :)</p>
+    </div>
+    <div v-else class="relative flex w-full flex-wrap items-stretch mb-3">
         <span class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 rounded text-base items-center justify-center w-8 pl-3 py-3">
             <i class="fas fa-search"></i>
         </span>
@@ -28,7 +36,7 @@ import MovieSearchDTO from '@/dtos/MovieSearchDTO';
 
 //Components
 import Movie from "@/components/Movie.vue";
-import Footer from '@/components/Footer.vue';
+
 
 interface NewMovieState{
     search:string,
@@ -51,19 +59,24 @@ const mainPage = defineComponent({
         });
 
         const getMovieData = async () =>{
-            data.loading = true;
             try{
                 const resp = await movieServices.getMovie({ s:data.search });
                 data.movies = resp;
-                data.loading = false;
             } catch(error){
                 console.log(error);
             }
         };
 
-        onMounted(()=> getMovieData());
+        const loadingScreen = () =>{    
+            setTimeout(()=>{
+                data.loading = false;
+            }, 1500);
+        };
 
-        return { getMovieData, data };
+        onMounted(()=> getMovieData());
+        onMounted(()=> loadingScreen());
+
+        return { getMovieData, data, loadingScreen };
     }
 });
 
